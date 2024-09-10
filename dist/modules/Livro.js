@@ -14,7 +14,7 @@ class Livro extends Item_1.Item {
         this.categoria = categoria;
     }
     toString() {
-        return `Livro:\nTítulo: ${this.getTitulo()}\nCategoria: ${this.categoria}\nAutor: ${this.getAutor()}\nISBN: ${this.getISBN()}`;
+        return `Livro:\nTítulo: ${this.Titulo}\nCategoria: ${this.categoria}\nAutor: ${this.Autor}\nISBN: ${this.isbn}`;
     }
 }
 exports.Livro = Livro;

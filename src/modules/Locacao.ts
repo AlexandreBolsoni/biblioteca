@@ -18,62 +18,62 @@ export class Locacao {
         this.dataDevolucao = null;
     }
 
-    public getCodLocacao(): number {
+     get CodLocacao(): number {
         return this.codLocacao;
     }
 
-    public setCodLocacao(codLocacao: number): void {
+     set CodLocacao(codLocacao: number) {
         this.codLocacao = codLocacao;
     }
 
-    public getMembro(): Membro {
+     get Membro(): Membro {
         return this.membro;
     }
 
-    public setMembro(membro: Membro): void {
+     set Membro(membro: Membro) {
         this.membro = membro;
     }
 
-    public getItem(): Item {
+     get Item(): Item {
         return this.item;
     }
 
-    public setItem(item: Item): void {
+     set Item(item: Item) {
         this.item = item;
     }
 
-    public getDataLocacao(): Date {
+     get DataLocacao(): Date {
         return this.dataLocacao;
     }
 
-    public setDataLocacao(dataLocacao: Date): void {
+     set DataLocacao(dataLocacao: Date) {
         this.dataLocacao = dataLocacao;
     }
 
-    public getDataPrevistaDevolucao(): Date {
+     get DataPrevistaDevolucao(): Date {
         return this.dataPrevistaDevolucao;
     }
 
-    public setDataPrevistaDevolucao(dataPrevistaDevolucao: Date): void {
+     set DataPrevistaDevolucao(dataPrevistaDevolucao: Date) {
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
     }
 
-    public getDataDevolucao(): Date | null {
+     get DataDevolucao(): Date | null {
         return this.dataDevolucao;
     }
 
-    public setDataDevolucao(dataDevolucao: Date): void {
+     set DataDevolucao(dataDevolucao: Date) {
         this.dataDevolucao = dataDevolucao;
     }
 
     // Lógica para devolver o item
-    public devolver(): void {
+    public devolver() {
         this.dataDevolucao = new Date(); // Define a data de devolução como a data atual
         console.log(`Item '${this.item.Titulo}' devolvido pelo membro '${this.membro.Nome}' na data ${this.dataDevolucao.toLocaleDateString()}.`);
     }
 
     // Lógica para emprestar o item
-    public emprestar(): void {
+    public emprestar() {
         console.log(`Item '${this.item.Titulo}' emprestado ao membro '${this.membro.Nome}' na data ${this.dataLocacao.toLocaleDateString()}. A devolução deve ocorrer até ${this.dataPrevistaDevolucao.toLocaleDateString()}.`);
     }
 

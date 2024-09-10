@@ -9,7 +9,7 @@ class CatalogoLivros {
         this.livros.push(livro);
     }
     buscarItemPorCod(codItem) {
-        return this.livros.find(livro => livro.getCodItem() === codItem);
+        return this.livros.find(livro => livro.CodItem === codItem);
     }
 }
 exports.CatalogoLivros = CatalogoLivros;

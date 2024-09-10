@@ -14,7 +14,7 @@ class Revista extends Item_1.Item {
         this.dataLancamento = dataLancamento;
     }
     toString() {
-        return `Revista:\nTítulo: ${this.getTitulo()}\nData de Lançamento: ${this.dataLancamento.toLocaleDateString()}\nAutor: ${this.getAutor()}\nISBN: ${this.getISBN()}`;
+        return `Revista:\nTítulo: ${this.Titulo}\nData de Lançamento: ${this.dataLancamento.toLocaleDateString()}\nAutor: ${this.Autor}\nISBN: ${this.isbn}`;
     }
 }
 exports.Revista = Revista;

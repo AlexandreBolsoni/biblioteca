@@ -10,69 +10,70 @@ class Locacao {
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
         this.dataDevolucao = null;
     }
-    getCodLocacao() {
+    get CodLocacao() {
         return this.codLocacao;
     }
-    setCodLocacao(codLocacao) {
+    set CodLocacao(codLocacao) {
         this.codLocacao = codLocacao;
     }
-    getMembro() {
+    get Membro() {
         return this.membro;
     }
-    setMembro(membro) {
+    set Membro(membro) {
         this.membro = membro;
     }
-    getItem() {
+    get Item() {
         return this.item;
     }
-    setItem(item) {
+    set Item(item) {
         this.item = item;
     }
-    getDataLocacao() {
+    get DataLocacao() {
         return this.dataLocacao;
     }
-    setDataLocacao(dataLocacao) {
+    set DataLocacao(dataLocacao) {
         this.dataLocacao = dataLocacao;
     }
-    getDataPrevistaDevolucao() {
+    get DataPrevistaDevolucao() {
         return this.dataPrevistaDevolucao;
     }
-    setDataPrevistaDevolucao(dataPrevistaDevolucao) {
+    set DataPrevistaDevolucao(dataPrevistaDevolucao) {
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
     }
-    getDataDevolucao() {
+    get DataDevolucao() {
         return this.dataDevolucao;
     }
-    setDataDevolucao(dataDevolucao) {
+    set DataDevolucao(dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
     // Lógica para devolver o item
     devolver() {
         this.dataDevolucao = new Date(); // Define a data de devolução como a data atual
-        console.log(`Item '${this.item.getTitulo()}' devolvido pelo membro '${this.membro.getNome()}' na data ${this.dataDevolucao.toLocaleDateString()}.`);
+        console.log(`Item '${this.item.Titulo}' devolvido pelo membro '${this.membro.Nome}' na data ${this.dataDevolucao.toLocaleDateString()}.`);
     }
     // Lógica para emprestar o item
     emprestar() {
-        console.log(`Item '${this.item.getTitulo()}' emprestado ao membro '${this.membro.getNome()}' na data ${this.dataLocacao.toLocaleDateString()}. A devolução deve ocorrer até ${this.dataPrevistaDevolucao.toLocaleDateString()}.`);
+        console.log(`Item '${this.item.Titulo}' emprestado ao membro '${this.membro.Nome}' na data ${this.dataLocacao.toLocaleDateString()}. A devolução deve ocorrer até ${this.dataPrevistaDevolucao.toLocaleDateString()}.`);
     }
     // Lógica para notificar atraso na devolução
     notificarAtraso() {
+        var _a, _b, _c, _d, _e;
         const dataAtual = new Date();
-        if (!this.dataDevolucao && dataAtual > this.dataPrevistaDevolucao) {
+        if (this.dataDevolucao === null && this.dataPrevistaDevolucao !== undefined && dataAtual > this.dataPrevistaDevolucao) {
             const diasAtraso = Math.floor((dataAtual.getTime() - this.dataPrevistaDevolucao.getTime()) / (1000 * 3600 * 24));
-            return `Atenção! O item '${this.item.getTitulo()}' está atrasado em ${diasAtraso} dias para devolução. Membro: '${this.membro.getNome()}'.`;
+            return `Atenção! O item '${(_a = this.item) === null || _a === void 0 ? void 0 : _a.Titulo}' está atrasado em ${diasAtraso} dias para devolução. Membro: '${(_b = this.membro) === null || _b === void 0 ? void 0 : _b.Nome}'.`;
         }
-        else if (this.dataDevolucao && this.dataDevolucao > this.dataPrevistaDevolucao) {
+        else if (this.dataDevolucao !== null && this.dataDevolucao > this.dataPrevistaDevolucao) {
             const diasAtraso = Math.floor((this.dataDevolucao.getTime() - this.dataPrevistaDevolucao.getTime()) / (1000 * 3600 * 24));
-            return `O item '${this.item.getTitulo()}' foi devolvido com ${diasAtraso} dias de atraso pelo membro '${this.membro.getNome()}'.`;
+            return `O item '${(_c = this.item) === null || _c === void 0 ? void 0 : _c.Titulo}' foi devolvido com ${diasAtraso} dias de atraso pelo membro '${(_d = this.membro) === null || _d === void 0 ? void 0 : _d.Nome}'.`;
         }
         else {
-            return `Nenhum atraso na devolução do item '${this.item.getTitulo()}'.`;
+            return `Nenhum atraso na devolução do item '${(_e = this.item) === null || _e === void 0 ? void 0 : _e.Titulo}'.`;
         }
     }
     toString() {
         return `
-        LOCAÇÃO \nCódigo: ${this.codLocacao}\nMembro: ${this.membro.getNome()}\nItem: ${this.item.getTitulo()}\nData de Locação: ${this.dataLocacao.toLocaleDateString()}\nData Prevista para Devolução: ${this.dataPrevistaDevolucao.toLocaleDateString()}\n${this.dataDevolucao ? "Devolvido em: " + this.dataDevolucao.toLocaleDateString() : "Não Devolvido"}`;
+        LOCAÇÃO \nCódigo: ${this.codLocacao}\nMembro: ${this.membro.Nome}\nItem: ${this.item.Titulo}\nData de Locação: ${this.dataLocacao.toLocaleDateString()}\nData Prevista para Devolução: ${this.dataPrevistaDevolucao.toLocaleDateString()}\n${this.dataDevolucao ? "Devolvido em: " + this.dataDevolucao.toLocaleDateString() : "Não Devolvido"}`;
     }
 }
 exports.Locacao = Locacao;

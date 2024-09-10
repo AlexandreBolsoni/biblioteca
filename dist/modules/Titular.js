@@ -4,7 +4,7 @@ exports.Titular = void 0;
 const Membro_1 = require("./Membro");
 class Titular extends Membro_1.Membro {
     constructor(codMembro, nome, statusAssociacao, listaDependente) {
-        super(codMembro, nome, statusAssociacao);
+        super(codMembro, nome, statusAssociacao.toString());
         this.listaDependente = listaDependente;
     }
     getListaDependente() {

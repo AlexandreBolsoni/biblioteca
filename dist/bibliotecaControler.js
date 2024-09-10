@@ -29,7 +29,7 @@ class BibliotecaController {
         this.membros.push(membro);
     }
     buscarMembroPorCod(codMembro) {
-        return this.membros.find(membro => membro.getCodMembro() === codMembro);
+        return this.membros.find(membro => membro.CodMembro === codMembro);
     }
     // Métodos relacionados a locações
     realizarLocacao(locacao) {

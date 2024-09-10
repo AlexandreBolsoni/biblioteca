@@ -9,7 +9,7 @@ class CatalogoRevistas {
         this.revistas.push(revista);
     }
     buscarItemPorCod(codItem) {
-        return this.revistas.find(revista => revista.getCodItem() === codItem);
+        return this.revistas.find(revista => revista.CodItem === codItem);
     }
 }
 exports.CatalogoRevistas = CatalogoRevistas;

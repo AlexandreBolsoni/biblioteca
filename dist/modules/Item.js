@@ -8,29 +8,29 @@ class Item {
         this.autor = autor;
         this.ISBN = ISBN;
     }
-    getCodItem() {
+    get CodItem() {
         return this.codItem;
     }
-    setCodItem(codItem) {
+    set CodItem(codItem) {
         this.codItem = codItem;
     }
-    getTitulo() {
+    get Titulo() {
         return this.titulo;
     }
-    setTitulo(titulo) {
+    set Titulo(titulo) {
         this.titulo = titulo;
     }
-    getAutor() {
+    get Autor() {
         return this.autor;
     }
-    setAutor(autor) {
+    set Autor(autor) {
         this.autor = autor;
     }
-    getISBN() {
+    get isbn() {
         return this.ISBN;
     }
-    setISBN(ISBN) {
-        this.ISBN = ISBN;
+    set isbn(isbn) {
+        this.ISBN = isbn;
     }
 }
 exports.Item = Item;

@@ -7,26 +7,26 @@ class Membro {
         this.nome = nome;
         this.statusAssociacao = statusAssociacao;
     }
-    getCodMembro() {
+    get CodMembro() {
         return this.codMembro;
     }
-    setCodMembro(codMembro) {
+    set CodMembro(codMembro) {
         this.codMembro = codMembro;
     }
-    getNome() {
+    get Nome() {
         return this.nome;
     }
-    setNome(nome) {
+    set Nome(nome) {
         this.nome = nome;
     }
-    getStatusAssociacao() {
+    get StatusAssociacao() {
         return this.statusAssociacao;
     }
-    setStatusAssociacao(statusAssociacao) {
+    set StatusAssociacao(statusAssociacao) {
         this.statusAssociacao = statusAssociacao;
     }
     toString() {
-        return `Membro:\nNome: ${this.nome}\nCódigo: ${this.codMembro}\nStatus: ${this.statusAssociacao === 1 ? "Ativo" : "Inativo"}`;
+        return `Membro:\nCódigo: ${this.codMembro}\nNome: ${this.nome}\nStatus: ${this.statusAssociacao}`;
     }
 }
 exports.Membro = Membro;

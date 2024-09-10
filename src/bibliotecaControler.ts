@@ -43,7 +43,7 @@ export class BibliotecaController {
     }
 
     public buscarMembroPorCod(codMembro: number): Membro | undefined {
-        return this.membros.find(membro => membro.getCodMembro() === codMembro);
+        return this.membros.find(membro => membro.CodMembro === codMembro);
     }
 
     // Métodos relacionados a locações
